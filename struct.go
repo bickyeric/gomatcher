@@ -35,7 +35,8 @@ func (ex StructIncludes) Matches(actual any) bool {
 }
 
 func (m StructIncludes) String() string {
-	return fmt.Sprint(map[string]any(m))
+	str := fmt.Sprint(map[string]any(m))
+	return fmt.Sprintf("is include {%s}", str[4:len(str)-1])
 }
 
 func (m StructIncludes) Got(got any) string {
